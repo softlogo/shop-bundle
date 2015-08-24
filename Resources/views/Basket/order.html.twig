@@ -1,0 +1,214 @@
+{% extends 'SoftlogoProductBundle:Product:index.html.twig' %}
+
+{% block style -%}
+{{parent()}}
+{% endblock -%}
+{% block scripts -%}
+{{parent()}}
+<script type="text/javascript">
+
+	function checkInvoice(){
+		if($('#softlogo_shopbundle_basket_isInvoice').prop('checked') )
+			$('#collapseCompany').fadeIn('slow');
+		else
+			$('#collapseCompany').fadeOut('slow');
+	}
+	function checkAccount(){
+		if($('#softlogo_shopbundle_basket_isAccount').prop('checked') ){
+			$('#collapsePassword').fadeIn('slow');
+			$(".password-field").attr('required', true);
+
+		}else{
+			$('#collapsePassword').fadeOut('slow');
+			$(".password-field").attr('required', false);
+		}
+	}
+
+	$(document).ready(function(){
+
+		$('#softlogo_shopbundle_basket_isInvoice').change(function(){
+			checkInvoice();
+		});
+		$('#softlogo_shopbundle_basket_isAccount').change(function(){
+			checkAccount();
+		});
+
+		checkInvoice();
+		checkAccount();
+	});
+
+</script>
+{% endblock -%}
+{% block content -%}
+<section class="checkout">
+<div class="container">
+
+	<!--Expandable Panels-->
+	<div class="row">
+		<div class="col-md-12">
+
+			<h1>Zamówienie</h1>
+		</div>
+		<div class="col-md-7">
+			<!--Hidden Panels-->
+			{% if app.user %}
+			<a  href="/logout">Wyloguj się</a>
+			{% else %}
+
+			<a  role="button" data-toggle="collapse" href="#collapseLogin" aria-expanded="false" aria-controls="collapseLogin">Zaloguj na moje konto</a>
+			{% endif %}
+			<div class="collapse" id="collapseLogin">
+
+				<div class="row">
+					<div class="col-md-12">
+					{% include 'SoftlogoUserBundle:Security:!login.html.twig' %}
+					</div>
+				</div>
+
+
+
+			</div>
+
+			<br />
+			<br />
+			<h3>Dane wysyłki</h3>
+
+
+			{{ form_start(form, { 'style': 'standard' }) }}
+			<div class="row">
+				<!--Left Column-->
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					{{form_row(form.firstname)}}
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					{{form_row(form.lastname)}}
+				</div>
+
+			</div>
+			{{form_row(form.addresses[0].address, { 'attr':{'required':'true'} })}}
+			<div class="row">
+				<!--Left Column-->
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					{{form_row(form.addresses[0].city, { 'attr':{'required':'true'} })}}
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					{{form_row(form.addresses[0].postalcode)}}
+				</div>
+
+			</div>
+
+
+
+			<div class="row">
+				<!--Left Column-->
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					{{form_row(form.email)}}
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6">
+					{{form_row(form.phone)}}
+				</div>
+
+			</div>
+
+
+			{% if not app.user %}
+			{{form_row(form.isAccount)}}
+			<div class="collapse" id="collapsePassword">
+
+				<div class="row">
+					<div class="form-group col-lg-6 col-md-6 col-sm-6">
+						{{ form_row(form.password.first) }}
+					</div>
+					<div class="form-group col-lg-6 col-md-6 col-sm-6">
+						{{ form_row(form.password.second) }}
+					</div>
+				</div>
+			</div>
+			{% endif %}
+
+
+			{{form_row(form.isInvoice)}}
+			<div class="collapse" id="collapseCompany">
+
+				{{form_row(form.company)}}
+				<div class="row">
+					<!--Left Column-->
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						{{form_row(form.nip)}}
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						{{form_row(form.regon)}}
+					</div>
+
+				</div>
+				{{form_row(form.addresses[1].address)}}
+				<div class="row">
+					<!--Left Column-->
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						{{form_row(form.addresses[1].city)}}
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6">
+						{{form_row(form.addresses[1].postalcode)}}
+					</div>
+
+				</div>
+
+			</div>
+
+			{{form_row(form.message)}}
+			<!--Right Column-->
+			<br />
+			<br />
+
+
+
+
+
+		</div>
+
+		<div class="col-lg-4 col-lg-offset-1 col-md-5 col-sm-5">
+			<h3>Twoje zamówienie</h3>
+
+			<table class="summary">
+				<tr><th>Produkty</th></tr>
+				{% for item in basket.basketItems %}
+				<tr>
+					<td class="name border">{{item.product.name}}<span> x {{item.quantity}}</span></td>
+					<td class="price border">{{item.price*item.quantity}} zł</td>
+				</tr>
+				{% endfor %}
+				<tr>
+					<td class="th">Wartość zamówienia</td>
+					<td class="price">{{basket.totalValue}} zł</td>
+				</tr>
+				<tr>
+					<td class="th border">{{basket.shippingMethod}}</td>
+					<td class="align-r border">{{basket.choicedShippingCost}} zł</td>
+				</tr>
+				<tr>
+					<td class="th">Łączny koszt</td>
+					<td class="price">{{basket.total}} zł</td>
+				</tr>
+			</table>
+
+			<ul class="record_actions">
+				<li>
+				<a href="{{ path('softlogo_shop.basket', { 'id': basket.id }) }}">Zmień</a>
+				</li>
+			</ul>
+			<br />
+
+
+
+			{{form_row(form.submit3)}}
+			<div class="hidden">
+				{{form_end(form)}}
+			</div>
+		</div>
+
+		<!--Checkout Form-->
+	</div>
+</div>
+</section>
+
+{% endblock %}

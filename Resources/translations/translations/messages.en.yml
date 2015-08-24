@@ -1,0 +1,86 @@
+under_construction: Page under construction Sorry for the inconvenience
+search: Search
+submit: Zapisz
+query_results: Search results
+ask_for: Send request
+number_of_paterns: Number of patterns
+name_of_patern: Name of pattern
+login: Login
+login_howto: Log in to your account using your user name or email address
+login_info: Login constitutes acceptance of Terms
+logout: Logout
+logged_as: Logged as
+short_company_description: Silver jewelery manufacturer and direct importer of silver from Italy, Turkey, Thailand and China
+details: Details
+registration: Registration
+register: Register
+register_to_see: If you see an offer you need to register
+register_to_buy: In order to register your business purchases
+register-or-call: Sign up or contact by phone
+get_access: You will receive an access pricing
+add_to_cart: Add to cart
+quantity: Pieces
+change: Change
+cart:
+    product: Product
+    description: Description
+    quantity: Pieces
+    price: Price
+    total_price: Total price
+    cart: Cart
+    pieces: Pieces
+    piece: piece
+    actions: Actions
+    set: Set
+    value: Total value
+    order: Order
+set:
+    name: Set name
+order:
+    placed: Order placed
+    we_will_contact: We will contact you to finalize your order.
+previous: Previous
+next: Next
+components: Components
+start:
+    intro_description: We are silver jewelry wholesaler, manufacturer and direct importer of silver products from Italy, Turkey, Thailand and China. In our offer you can find silver jewelry with CRYSTALLIZED TM - Swarovski Elements and with other stones such as: onyx, coral, turquoise and others. As a silver jewelry wholesaler we also offer designs of other Polish manufacturers.
+    intro_welcome: We kindly invite you to cooperation.
+wybor:
+    zakup:
+        qt: Qt
+cat:
+    silver: Silver
+    cristals: Crystals
+    medalions: Medalions
+    brooches: Brooches
+    zirconia: Zirconia
+    rings: Rings
+    beads: Beads
+    devotional: Devotional
+    charms: Charms
+    cuffinks: Cuffinks
+    mens : Men's
+    chains: Chains
+    with-silver: with silver
+    without-stones: without stones
+    with-stones: with stones
+    with-enamel: with enamel
+    china: china
+    ocasional: Occasional
+    articles: Articles
+form:
+    registration: Registration
+    company: Company name
+    address: Street and apartment number
+    city: City
+    zip: Zip Code
+    phone: Phone
+    email: E-Mail
+    user: User
+    password: Password
+    confirm: Confirm
+    accept: Accept
+    submit: Save
+statement:
+    text: I certify that I have read the rules and accept its terms. I consent to the processing of my personal data and communication via electronic mail for the purposes of execution of contracts, in accordance with the "Law on the Protection of Personal Data" of 29.08.1997 (Journal of Laws. No. 133, item 883).
+    confirm: Registration constitutes acceptance of Terms

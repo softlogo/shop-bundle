@@ -1,0 +1,7 @@
+softlogo_shop.basket:
+    path:     /
+    defaults: { _controller: "SoftlogoShopBundle:Basket:basket" }
+
+softlogo_shop.order:
+    path:     /
+    defaults: { _controller: "SoftlogoShopBundle:Basket:order" }

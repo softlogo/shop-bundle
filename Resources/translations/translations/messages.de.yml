@@ -1,0 +1,67 @@
+under_construction: Seite im Aufbau Sorry für die Unannehmlichkeiten
+search: Suche
+query_results: Suchergebnisse
+ask_for: Anfrage senden
+number_of_paterns: Anzahl der Muster
+name_of_patern: Name des Sets
+login: Einloggung
+login_howto: Loggen Sie sich in Ihrem Konto mit Ihrem Benutzernamen oder Ihrer E-Mail-Adresse ein
+login_info: Ihre Einloggung bedeutet, dass Sie die Ordnung akzeptieren
+logout: Ausloggen
+logged_as: Eingeloggt als
+short_company_description: Silberschmuck-Hersteller und Direktimporteur von Silber aus Italien, der Türkei, Thailand und China
+details: Einzelheiten
+registration: Registrierung
+register: Registrieren
+register_to_see: Wenn Sie sich das Angebot ansehen möchten, müssen Sie sich registrieren
+register_to_buy: Registrieren Sie sich oder setzen Sie sich telefonisch in Verbindung 
+get_access: Sie erhalten von uns den Zugang zum Preisangebot
+add_to_cart: In den Warenkorb
+quantity: Stück
+change: Ändern
+cart:
+    product: Produkt
+    description: Beschreibung
+    quantity: Stück
+    price: Preis
+    total_price: Zusammen
+    cart: Warenkorb
+    pieces: Stück
+    piece: Stück
+    actions: Aktionen
+    set: Set
+    value: Warenkorbwert
+previous: zurück
+next: weiter
+components: Components
+start:
+    intro_description: 
+        Wir sind Schmuck-Hersteller und Direktimporteur von Silber aus Italien, der Türkei, Thailand und China. In unserem Angebot finden Sie auch Silber finden mit CRYSTALLIZED TM - Swarovski Elements und anderen Edelsteinen wie Onyx, Koralle, Türkis und andere. Als Großhandel Silberschmuck Silber, bieten wir auch andere polnische Hersteller
+    intro_welcome: Wir laden Sie zur Zusammenarbeit
+wybor:
+    zakup:
+        qt: Qt
+statement:
+    text: Ich erkläre, dass ich die Ordnung zur Kenntnis genommen habe und ihre Bedingungen akzeptiere. Ich erkläre mich damit einverstanden, meine personenbezogenen Daten zu verarbeiten und sich mit mir per E-Mail zu verständigen, damit meine Bestellungen realisiert werden könnten, und zwar gemäß dem Datenschutzgesetz vom 29.08.1997 (Gesetzblatt Nr. 133 Pos. 883).
+    confirm: Ihre Registrierung bedeutet, dass Sie die Ordnung akzeptieren.
+cat:
+    silver: Silver
+    cristals: Crystals
+    medalions: Medalions
+    brooches: Brooches
+    zirconia: Zirconia
+    rings: Rings
+    beads: Beads
+    devotional: Devotional
+    charms: Charms
+    cuffinks: Cuffinks
+    mens : Men's
+    chains: Chains
+    with-silver: with silver
+    without-stones: without stones
+    with-stones: with stones
+    with-enamel: with enamel
+    china: china
+    ocasional: Occasional
+    articles: Articles
+

@@ -1,0 +1,57 @@
+{% extends 'SoftlogoProductBundle:Product:index.html.twig' %}
+
+
+{% block scripts -%}
+{{parent()}}
+
+{% endblock -%}
+{% block style -%}
+{{parent()}}
+{% endblock -%}
+{% block content -%}
+<div class="container cart">
+	<div class="row">
+		<div class="col-md-12">
+		<h1>Podsumowanie zamówienia</h1>
+		</div>
+		<div class="col-md-8">
+			<br />
+			<table class="summary">
+				<tr><th>Produkty</th></tr>
+				{% for item in basket.basketItems %}
+				<tr>
+					<td class="name border">{{item.product.name}}<span> x {{item.quantity}}</span></td>
+					<td class="price border">{{item.price*item.quantity}} zł</td>
+				</tr>
+				{% endfor %}
+				<tr>
+					<td class="th">Wartość zamówienia</td>
+					<td class="price">{{basket.totalValue}} zł</td>
+				</tr>
+				<tr>
+					<td class="th border">{{basket.shippingMethod}}</td>
+					<td class="align-r border">{{basket.choicedShippingCost}} zł</td>
+				</tr>
+				<tr>
+					<td class="th">Łączy koszt</td>
+					<td class="price">{{basket.total}} zł</td>
+				</tr>
+			</table>
+		
+			<br />
+			<br />
+			<br />
+			<h2>Dziękujemy za złożenie zamówienia</h2>
+			<a href="/pl/shop">Wróć do sklepu</a>
+			<br />
+			<br />
+			<br />
+			<br />
+			
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}

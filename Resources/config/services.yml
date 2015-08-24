@@ -1,0 +1,57 @@
+parameters:
+#    softlogo_shop.example.class: Softlogo\ShopBundle\Example
+
+services:
+
+services:
+    softlogo_shop.basket:
+        class:     Softlogo\ShopBundle\Util\BasketFactory
+        arguments: ["@doctrine","@form.factory", "@router", "@templating", "@fos_user.user_manager", "@security.context"]
+
+    softlogo_shop.admin.basket_item:
+        class: Softlogo\ShopBundle\Admin\BasketItemAdmin
+        arguments: [~, Softlogo\ShopBundle\Entity\BasketItem, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Shop, label: BasketItem, show_in_dashboard: false}
+
+    softlogo_shop.admin.basket:
+        class: Softlogo\ShopBundle\Admin\BasketAdmin
+        arguments: [~, Softlogo\ShopBundle\Entity\Basket, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Shop, label: Orders}
+
+    softlogo_shop.admin.address:
+        class: Softlogo\ShopBundle\Admin\AddressAdmin
+        arguments: [~, Softlogo\ShopBundle\Entity\Address, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Address}
+
+    softlogo_shop.admin.address_type:
+        class: Softlogo\ShopBundle\Admin\AddressTypeAdmin
+        arguments: [~, Softlogo\ShopBundle\Entity\AddressType, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: dictionary, label: AddressType}
+
+    softlogo_shop.admin.shipping:
+        class: Softlogo\ShopBundle\Admin\ShippingAdmin
+        arguments: [~, Softlogo\ShopBundle\Entity\Shipping, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Shipping}
+
+    softlogo_shop.admin.shipping_pack:
+        class: Softlogo\ShopBundle\Admin\ShippingPackAdmin
+        arguments: [~, Softlogo\ShopBundle\Entity\ShippingPack, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: ShippingPack}
+
+    softlogo_shop.admin.shipping_weight:
+        class: Softlogo\ShopBundle\Admin\ShippingWeightAdmin
+        arguments: [~, Softlogo\ShopBundle\Entity\ShippingWeight, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: ShippingWeight}
+
+    softlogo_shop.admin.shipping_calculation_type:
+        class: Softlogo\ShopBundle\Admin\ShippingCalculationTypeAdmin
+        arguments: [~, Softlogo\ShopBundle\Entity\ShippingCalculationType, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: ShippingCalculationType}

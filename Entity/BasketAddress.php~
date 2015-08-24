@@ -1,0 +1,93 @@
+<?php
+
+namespace Softlogo\ShopBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+//use Softlogo\ShopBundle\Entity\Address as Address;
+
+/**
+ * BasketAddress
+ *
+ * @ORM\Table(name="basket_address")
+ * @ORM\Entity
+ */
+class BasketAddress extends Address
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+	/**
+	 *
+	 * @ORM\ManyToOne(targetEntity="Basket")
+	 */
+	private $basket;
+
+	/**
+	 *
+	 * @ORM\ManyToOne(targetEntity="Softlogo\ShopBundle\Entity\AddressType")
+	 */
+	private $type;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set basket
+     *
+     * @param \Softlogo\ShopBundle\Entity\Basket $basket
+     * @return BasketAddress
+     */
+    public function setBasket(\Softlogo\ShopBundle\Entity\Basket $basket = null)
+    {
+        $this->basket = $basket;
+
+        return $this;
+    }
+
+    /**
+     * Get basket
+     *
+     * @return \Softlogo\ShopBundle\Entity\Basket 
+     */
+    public function getBasket()
+    {
+        return $this->basket;
+    }
+
+    /**
+     * Set type
+     *
+     *
+     * @return BasketAddress
+     */
+    public function setType(AddressType $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return AddressType
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+}

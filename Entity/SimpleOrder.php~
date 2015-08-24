@@ -1,0 +1,65 @@
+<?php
+
+namespace Softlogo\ShopBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Softlogo\ShopBundle\Model\OrderInterface;
+
+/**
+ * SimpleOrder
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class SimpleOrder implements OrderInterface
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="totalValue", type="decimal")
+     */
+    private $totalValue;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set totalValue
+     *
+     * @param string $totalValue
+     * @return SimpleOrder
+     */
+    public function setTotalValue($totalValue)
+    {
+        $this->totalValue = $totalValue;
+
+        return $this;
+    }
+
+    /**
+     * Get totalValue
+     *
+     * @return string 
+     */
+    public function getTotalValue()
+    {
+        return $this->totalValue;
+    }
+}

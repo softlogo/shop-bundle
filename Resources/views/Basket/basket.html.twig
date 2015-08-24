@@ -1,0 +1,138 @@
+{% extends 'SoftlogoProductBundle:Product:index.html.twig' %}
+
+
+{% block scripts -%}
+{{parent()}}
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		// Get the ul that holds the collection of tags
+		$collectionHolder = $('table.basket-items tbody');
+
+		// add a delete link to all of the existing tag form li elements
+		$collectionHolder.find('tr.item').each(function() {
+			addTagFormDeleteLink($(this));
+		});
+
+		// ... the rest of the block from above
+	});
+
+
+	function addTagForm() {
+		addTagFormDeleteLink($newFormLi);
+	}
+
+	function addTagFormDeleteLink($tagFormLi) {
+		var $removeFormA = $('<a class="remove "href="#">x</a>');
+		$tagFormLi.append($removeFormA);
+
+		$removeFormA.on('click', function(e) {
+			// prevent the link from creating a "#" on the URL
+			e.preventDefault();
+
+			// remove the li for the tag form
+			$tagFormLi.remove();
+		});
+	}
+
+
+
+
+</script>
+
+{% endblock -%}
+{% block style -%}
+{{parent()}}
+<style type="text/css">
+	.cart .basket-items .control-label{
+	display:none;
+	}
+	.cart .basket-items .qnt-count input{
+	width:100px;;
+	position: relative;
+	top: 7px;
+	}
+	.remove{
+	padding:50px 20px;
+	display:block;
+	font-size:16px;
+	}
+</style>
+{% endblock -%}
+{% block content -%}
+<div class="container cart">
+	<div class="row">
+		<div class="col-md-12">
+		<h1>Koszyk</h1>
+		</div>
+        {% if basket.basketItems.count>0%}
+		<div class="col-md-8">
+			{{ form_start(form) }}
+
+            	<table class="basket-items">
+              	<tr>
+                	<th>&nbsp;</th>
+                  <th>Produkt</th>
+                  <th>Cena</th>
+                  <th>Sztuk</th>
+                  <th>Cena Razem</th>
+                </tr>
+                <!--Item-->
+				<tbody>
+				{% for item in form.basketItems %}
+                <tr class="item">
+					<td class="thumb">
+						<a href="{{ path('product_show', {'id': item.vars.data.product.id})  }}">{% media item.vars.data.product.getFirstProductMedia.media, 'small'%}</a>
+						</td>
+                  <td class="name"><a href="{{ path('product_show', {'id': item.vars.data.product.id})  }}">{{item.vars.data.product}}</a></td>
+                  <td class="price">{{item.vars.data.price}} zł</td>
+                  <td class="qnt-count">
+                    <!--<a class="incr-btn" href="shopping-cart.html#">-</a>-->
+					{{ form_row(item.quantity) }}
+                    <!--<input class="quantity form-control" type="text" value="2">-->
+                    <!--<a class="incr-btn" href="shopping-cart.html#">+</a>-->
+                  </td>
+                  <td class="total">{{item.vars.data.price*item.vars.data.quantity}} zł</td>
+                  <td class="delete"><i class="icon-delete"></i></td>
+				<td class="hidden">{{ form_row(item.submit) }}</td>
+                </tr>
+
+				{% endfor %}
+				</tbody>
+                <!--Item-->
+              </table>
+		</div>
+		<div class="col-md-4">
+			<br />
+			
+			<table class="summary">
+				<tr>
+					<td class="th">Wartość zamówienia</td>
+					<td class="price">{{basket.totalValue}} zł</td>
+				</tr>
+			</table>
+		
+			<br />
+			{{ form_row(form.shippingMethod) }}
+			<p>Koszt przesyłki kurierskiej to: <strong>{{basket.shippingCost}} zł</strong></p>
+			<p>Odbiór osobisty możliwy w magazynie w Gdańsku w godzinach 9:00 - 16:00 od poniedziałku do piatku po wczesniejszym kontakcie telefonicznym.</p>
+			<br />
+			{{ form_row(form.submit) }}
+			{{ form_row(form.submit2) }}
+			<div class="hidden">
+			{{ form_end(form) }}
+			</div>
+		</div>
+
+              {%else %}
+        <div class="col-md-12">
+              <h2>Koszyk jest pusty</h2>
+              <br />
+              <br />
+              <br />
+              
+        </div>
+              {% endif%}	
+	</div>
+</div>
+
+{% endblock %}

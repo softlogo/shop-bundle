@@ -1,0 +1,87 @@
+under_construction: Strona w budowie za niedogodności przepraszamy
+search: Szukaj
+submit: Zapisz
+query_results: Wyniki wyszukiwania
+ask_for: Wyślij zapytanie
+number_of_paterns: Liczba wzorów
+name_of_patern: Nazwa zestawu
+login: Logowanie
+login_howto: Zaloguj się na konto za pomocą nazwy użytkownika lub adresu email
+login_info: Logowanie oznacza akceptację regulaminu
+logout: Wyloguj się
+logged_as: Zalogowany jako
+short_company_description: Producent biżuterii srebrnej oraz bezpośredni importer srebra z Włoch Turcji, Tajlandii i Chin. 
+details: Szczegóły
+registration: Rejestracja
+register: Zarejestruj się
+register-or-call: Zarejestruj się lub skontaktuj się telefonicznie
+register_to_see: Jesli chcesz zobaczyć ofertę musisz się zarejestrować
+register_to_buy: W celu dokonania zakupów zarejestruj swoją firmę
+get_access: Otrzymasz od nas dostęp do oferty cenowej
+add_to_cart: Dodaj do koszyka
+Quantity: Sztuk
+quantity: sztuk
+change: Zmień
+cart:
+    product: Produkt
+    description: Opis
+    quantity: Sztuk
+    price: Cena
+    total_price: Razem
+    cart: Koszyk
+    pieces: sztuk
+    piece: sztuka
+    actions: Akcje
+    set: Zestaw
+    value: Wartość koszyka
+    order: Zamawiam
+set:
+    name: Nazwa zestawu
+order:
+    placed: Zamówienie złożone
+    we_will_contact: Skontaktujemy się z Państwem w celu finalizacji zamówienia.
+previous: Poprzedni
+next: Następny
+components: Elementy zestawu
+start:
+    intro_description: Jesteśmy producentem biżuterii srebrnej oraz bezpośrednim importerem srebra z Włoch, Turcji, Tajlandii i Chin. W naszej ofercie znajdą Państwo również wyroby ze srebra z wykorzystaniem CRYSTALLIZED TM - Swarovski Elements i innych kamieni jubilerskich takich jak: onyks, koralowiec, turkus i inne. Jako hurtownia srebra oferujemy także biżuterię srebrną innych polskich wytwórców. 
+    intro_welcome: Serdecznie zapraszamy do współpracy.
+wybor:
+    zakup:
+        qt: Sztuk
+cat:
+    silver: Srebro
+    cristals: Kryształy
+    medalions: Medaliony
+    brooches: Broszki
+    zirconia: Cyrkonie
+    rings: Obrączki
+    beads: Koraliki
+    devotional: Dewocjonalia
+    charms: Charms
+    cuffinks: Spinki
+    mens : Meskie
+    chains: Łańcuchy
+    with-silver: ze srebrem
+    without-stones: bez kamienia
+    with-stones: z kamieniem
+    with-enamel: z emalią
+    china: z porcelaną
+    ocasional: Okolicznościowe
+    articles: Artykuły
+form:
+    registration: Rejestracja
+    company: Nazwa firmy
+    address: Ulica i numer lokalu
+    city: Miejscowość
+    zip: Kod pocztowy
+    phone: Telefon kontaktowy
+    email: E-Mail
+    user: Użytkownik
+    password: Hasło
+    confirm: Potwierdź hasło
+    accept: Akceptacja
+    submit: Zapisz
+statement:
+    text: Oświadczam, że zapoznałem się regulaminem i akceptuję jego warunki. Wyrażam zgodę na przetwarzanie moich danych osobowych oraz komunikację za pośrednictwem poczty elektronicznej w celach związanych z realizacją zamówień, zgodnie z "Ustawą o Ochronie danych Osobowych" z dnia 29.08.1997r (Dz. Ust. Nr 133 poz. 883) 
+    confirm: Rejestracja oznacza akceptację regulaminu

@@ -1,0 +1,25 @@
+SoftlogoShopBundle_basketitem:
+    resource: "@SoftlogoShopBundle/Resources/config/routing/basketitem.yml"
+    prefix:   /basketitem
+
+softlogo_shop.basket:
+    path:     /basket
+    defaults: { _controller: "SoftlogoShopBundle:Basket:basket" }
+
+softlogo_shop.order:
+    path:     /order
+    defaults: { _controller: "SoftlogoShopBundle:Basket:order" }
+
+softlogo_shop.login_route:
+    path:     /login
+    defaults: { _controller: SoftlogoShopBundle:Security:login }
+
+softlogo_shop.login_check:
+    path: /login_check
+    # no controller is bound to this route
+    # as it's handled by the Security system
+ 
+softlogo_shop.logout:
+    path: /logout
+    # no controller is bound to this route
+    # as it's handled by the Security system

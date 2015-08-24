@@ -1,0 +1,61 @@
+under_construction: Страница находится в разработке Приносим извинения за неудобства
+search: Search
+query_results: Search results
+ask_for: Send request
+number_of_paterns: Number of patterns
+name_of_patern: Name of pattern
+login: Войти
+logout: Logout
+logged_as: Logged as
+short_company_description: Производитель Серебряные украшения и прямым импортером серебра из Италии, Турции, Таиланде и Китае
+details: Details
+registration: регистрация
+register: Register
+register_to_see: If you see an offer you need to register
+register_to_buy: In order to register your business purchases
+get_access: You will receive an access pricing
+add_to_cart: Add to cart
+quantity: Pieces
+change: Change
+cart:
+    product: Product
+    description: Description
+    quantity: Pieces
+    price: Price
+    total_price: Total price
+    cart: Cart
+    pieces: Pieces
+    piece: piece
+    actions: Actions
+    set: Set
+    value: Total value
+previous: Previous
+next: Next
+components: Components
+start:
+    intro_description: Мы изготовление ювелирных изделий и прямым импортером серебра из Италии, Турции, Таиланде и Китае. В нашем предложении вы найдете также серебро с кристаллами ТМ - Swarovski Elements и других драгоценных камней, таких как оникс, коралл, бирюза и другие. В оптовой ювелирных изделий из серебра серебра, мы также предлагаем другие польские производители
+    intro_welcome: Приглашаем Вас к сотрудничеству.
+wybor:
+    zakup:
+        qt: Qt
+cat:
+    silver: Silver
+    cristals: Crystals
+    medalions: Medalions
+    brooches: Brooches
+    zirconia: Zirconia
+    rings: Rings
+    beads: Beads
+    devotional: Devotional
+    charms: Charms
+    cuffinks: Cuffinks
+    mens : Men's
+    chains: Chains
+    with-silver: with silver
+    without-stones: without stones
+    with-stones: with stones
+    with-enamel: with enamel
+    china: china
+    ocasional: Occasional
+    articles: Articles
+

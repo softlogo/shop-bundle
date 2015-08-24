@@ -1,0 +1,30 @@
+basketitem:
+    path:     /
+    defaults: { _controller: "SoftlogoShopBundle:BasketItem:index" }
+
+basketitem_show:
+    path:     /{id}/show
+    defaults: { _controller: "SoftlogoShopBundle:BasketItem:show" }
+
+basketitem_new:
+    path:     /new
+    defaults: { _controller: "SoftlogoShopBundle:BasketItem:new" }
+
+basketitem_create:
+    path:     /create
+    defaults: { _controller: "SoftlogoShopBundle:BasketItem:create" }
+    requirements: { _method: post }
+
+basketitem_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "SoftlogoShopBundle:BasketItem:edit" }
+
+basketitem_update:
+    path:     /{id}/update
+    defaults: { _controller: "SoftlogoShopBundle:BasketItem:update" }
+    requirements: { _method: post|put }
+
+basketitem_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "SoftlogoShopBundle:BasketItem:delete" }
+    requirements: { _method: post|delete }
