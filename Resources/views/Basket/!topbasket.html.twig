@@ -1,0 +1,41 @@
+<ul class="nav navbar-nav navbar-right topcart">
+	<li class="dropdown">
+	<div class="btn-group" role="group" aria-label="...">
+		<a href="{{ path('softlogo_shop.basket') }}" type="button" class="btn btn-primary">
+			<span class="glyphicon glyphicon-shopping-cart"></span>
+			<span class="cart-item-quantity"> {{basket.totalCount}} szt.</span>
+		</a>
+
+		<div class="btn-group" role="group">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				Koszyk
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li>
+				<div class="topcart-products">
+					Łączna wartość: 
+					<span class="lnt-cart-total">{{basket.totalValue}} zł</span>
+				</div>
+				</li>
+
+				{% for item in basket.basketItems %}
+				<li>
+				<div class="topcart-products">
+					<a href="{{ path('product_show', { 'id': item.product.id }) }}">{% media item.product.firstProductMedia.media, 'small'%}</a>
+					<span class="lnt-product-info">
+						<span class="lnt-product-name"><a href="{{ path('product_show', { 'id': item.product.id }) }}">{{item.product.name}}</a></span>
+						<span class="lnt-product-price">{{item.product.price*item.quantity}} zł</span>
+					</span>
+				</div>
+				</li>
+				{% endfor %}
+				<li class="topcart-actions">
+				<a href="{{ path('softlogo_shop.basket') }}" class="lnt-view-cart-btn">Zobacz koszyk</a>
+				<a href="{{ path('softlogo_shop.order') }}" class="lnt-checkout-btn">Zamów</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	</li>
+</ul>

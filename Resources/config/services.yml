@@ -1,12 +1,29 @@
 parameters:
 #    softlogo_shop.example.class: Softlogo\ShopBundle\Example
 
-services:
 
 services:
+
+    softlogo.ShopHelper:
+        class : Softlogo\ShopBundle\Templating\Helper\ShopHelper
+        tags : 
+        - {name : 'templating.helper', alias : 'shop'} 
+        arguments : [ @templating ]
+
+    twig.extension.softlogo_shop:
+        class: Softlogo\ShopBundle\Extension\TwigShop
+        tags:
+            - { name: 'twig.extension' }
+        arguments : [ @service_container, @doctrine.orm.entity_manager, @softlogo_shop.basket]
+
     softlogo_shop.basket:
         class:     Softlogo\ShopBundle\Util\BasketFactory
-        arguments: ["@doctrine","@form.factory", "@router", "@templating", "@fos_user.user_manager", "@security.context"]
+        arguments: ["@doctrine","@session"]
+
+
+    softlogo_shop:
+        class:     Softlogo\ShopBundle\Util\Shop
+        arguments: ["@doctrine","@form.factory", "@router", "@templating", "@fos_user.user_manager", "@security.context","@softlogo_shop.basket"]
 
     softlogo_shop.admin.basket_item:
         class: Softlogo\ShopBundle\Admin\BasketItemAdmin

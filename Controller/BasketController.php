@@ -19,7 +19,7 @@ class BasketController extends Controller
 	 */
 	public function basketAction(Request $request)
 	{
-		$bf=$this->get('softlogo_shop.basket');	
+		$bf=$this->get('softlogo_shop');	
 		$bf->initBasketForm($request);
 
 		if($bf->isToOrderClicked()==true){
@@ -34,7 +34,7 @@ class BasketController extends Controller
 	}
 
 	public function orderAction(Request $request){
-		$bf=$this->get('softlogo_shop.basket');	
+		$bf=$this->get('softlogo_shop');	
 
 
 		$bf->initBasketForm($request);

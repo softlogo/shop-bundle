@@ -202,6 +202,14 @@ class Basket implements OrderInterface, CustomerInterface
 		return $totalValue;
 	}
 
+	public function getTotalCount()
+	{
+		$totalCount=0;
+		foreach ($this->getBasketItems() as $item){
+			$totalCount+=$item->getQuantity();
+		}
+		return $totalCount;
+	}
 
 
 
